@@ -1,0 +1,94 @@
+# Webscarpping -pulling up information from the internet directly 
+#Power Query
+
+# First Visual - Map 
+
+--> Renamed page 2 as Map 
+--> Searched for World Happiness Report on Google
+    * use the following link - 
+      https://en.wikipedia.org/wiki/World_Happiness_Report    
+--> chose 2020 report table --> Copy the URL 
+--> Go to powerBI Desktop --> Click on the GetData tab 
+--> Click web & past the URL in the window showing 
+--> Keep it basic --> click on Ok 
+--> Navigator opens (where various tales are showing up )
+--> preview some tables  --> Chose table no.13
+--> Table 13 is our loaded dataset (in this you can see the globe icon is
+    present before the country which means powerBi can recognize it as    
+    Geolocation.)                
+--> Single click on the country --> GO to Table tools & Set the Data
+    Category to country (!!pay attention to country and county !!)   
+--> Rename Table 13 to WHR 
+
+# Understanding differnt maps
+* Anything that gets into the Legend -- gets converted to different colours    
+  as per unique values available.
+Do the following steps in the visualization box-
+--> Drag and drop Country to Legend
+--> Drag and drop GDP per capita to Bubble size
+--> Go to brush(format) --> Change bubble size to smaller 
+    !! don't forget to click on the map or visual you are working on 
+
+
+--> Search on Google for the country and continent of the world 
+     * use the following link - 
+     https://worldpopulationreview.com/country-rankings/list-of-countries-  
+     by-continent 
+--> Copy the URL 
+--> Go to powerBI Desktop --> Click on the GetData tab 
+--> Click web & past the URL in the window showing 
+--> Keep it basic --> click on Ok --> Navigator opens (where various tales
+    are showing up )  
+--> preview some tables  --> Load table no.1 
+--> Rename Table 1 as Continent.
+
+
+# In the data view
+# Transform Data -->Redirects to Power Query Editor
+# Changing Header
+
+--> Go to Home tab --> Click on Transform Data (redirects to power query)
+--> In this Power query Editor Click on the table icon in the upper left of 
+    the table
+--> Click on "Use First Row as headers" (to make country and continent as  
+    header)
+--> Go to Files click on Close and apply
+--> Go to Model View You can see three of the datasets connected to   
+    each other based on country<-->continent relationship
+
+# Second Visual - Shape Map
+--> Drag and drop Country to Location
+--> Drag and drop continent to Legend
+--> Single click on the country --> GO to Table tools & Set the Data
+    Category to country (!!pay attention to country and county !!)
+--> Single click on the Continent --> GO to Table tools & Set the Data
+    Category to continent
+--> Make another visual of the stacked bar graph 
+    in the visualization
+    Y-axis = Continent
+    X-axis = GDP per capita
+
+
+# Third Visual - Azure Map
+--> Drag and drop Country to Location
+  
+ *Azure Maps - 
+    Azure maps provide features like visuals wrt roads, grayscale,  
+    satellite, etc.
+
+# Fourth Visual - ArcGIS Map
+--> Drag and drop Country to Location
+--> Drag and drop Continent to Color
+    ArcGIS maps provide features like searching for an address, 
+    View the list of layers on the map, Base map(Dark grey, light 
+    grey,  street maps), choose the content for the background or  
+    visuals, add context to your data to enhance the meaning of 
+    visuals, etc.
+    
+
+# SUMMARY #
+used -
+1. Learned about Transform Data (redirects to power query)
+2. Power Query Editor
+3. Learned about Column tools 
+4. Webscrapping - how to load data from the Internet.

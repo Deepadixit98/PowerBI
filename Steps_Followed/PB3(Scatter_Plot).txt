@@ -1,0 +1,142 @@
+# Scatter Plots
+  These plots are used to identify the correlation between 2 variables.
+  
+
+# First Visual - 
+--> In the visualization
+    Y-axis = GDP per capita
+    X-axis = Score
+    Legend = Continent
+    values = Country
+    
+    **Eventually, the scatter pot shows the summation of any numerical 
+     Variable.
+     So, We put the country to the values in visualization to see the 
+     country-wise GDP per capita vs. Score.
+     
+    Tooltips = Overall rank, Healthy life expectancy, Freedom to make life 
+               choices
+   
+    **Tooltips are used to see the information according to various 
+      variables but those variables do not affect the scatter plot i.e.   
+      scatterplot does not react to the variation related to variables in
+      tooltips. 
+      That is the scatterplot does not react to --> Overall rank, Healthy 
+      life expectancy, and Freedom to make life choices.
+                  
+    Play-axis = used for timeline-based outputs e.g.- a monthly report.
+                can play the scatter plot like a music player or video
+		player.
+                let's say we take the continent as the play axis of the 
+                scatter will be played as per continent.   
+
+  
+
+# Second Visual - 
+--> In the visualization
+    Y-axis = Perceptions of corruption
+    X-axis = Freedom to make life choices
+    values = Country
+    
+-->In the Brush (Format) 
+    Zoom slider --> turn on 
+	* you can slide up and down on Y-axis and slide right and left on	  X-axis and 
+
+    Markers --> shape --> Type = diamond
+    Markers --> Color --> Blue(default) 
+    Markers --> Color --> fx (conditional formatting)
+          fx (conditional formatting)--> default Color- Markers Will pop up 
+             Format style = Gradient
+             What field should we base this on? = Sum of GDP per capita
+             Summarization = sum
+             How should we format empty values? = Don't Format
+	     Minimum =Lowest value (Red)
+	     Centre  =Middle value (grey) 
+ 	     Maximum =Highest value(Green)
+             OK
+             
+    * Legend overrides conditional formatting.
+    * If you remove Legend conditional formatting will be retained.
+    * Legend has given more importance over conditional formatting.
+   
+
+
+# Third Visual - 
+-->In the visualization
+    Y-axis = Social support
+    X-axis = Generosity
+
+	It may be possible that the single-country data can be repeated.
+	You want to present data with the help of actual numbers.
+	
+	**Eventually, the scatter pot shows the summation of any numerical 
+        Variable.
+        
+	So, for plotting the Graph without summation and using actual -    	values.
+ 	
+	Go to visualization -->
+	--> right click on Generosity
+	--> Choose Don't Summarize
+	--> right click on Social support
+	--> Choose Don't Summarize
+
+
+ 
+# Fourth Visual - Clustering
+--> In the visualization -->
+    Y-axis = Sum of Healthy life expectancy
+    X-axis = Sum of Freedom to make life choices
+
+    values = Country    (Automatically appears in Legend filed 
+     after clustering)  
+
+    Legend = Freedom vs. Health  (Automatically appears in Legend filed 
+     after clustering)      
+
+	* clustering is basically a method of grouping. called bucketing.
+	
+	* We can do clustering over every numerical field --> (Try right-	  click on any numerical field.) 
+	
+    
+	* BY clicking 3 dots at the upper right corner of the visual 	  	  	--> Automatically find cluster 
+		-->Clusters Table pops up 
+		Name = Freedom vs. Health
+		Field = Country
+		Description = ...Blank
+		Number of clusters = 3
+
+	* 3 Clusters will be visible in the fourth chart
+.	* Ken's Method for Clustering.
+	* automatically a physical field named Freedom vs. Health will be 	   visible in the data Box.
+	* Waffle icon before that physical field.
+
+	* Click on the Waffle icon --> Edit cluster 
+	--> Rename Cluster 1 = H  i.e High
+		   Cluster 2 = M  i.e Middium
+		   Cluster 3 = L  i.e Low
+	--> OK
+            the colors and name of cluster gets changed.
+
+
+# Fifth Visual - Map
+--> In the visualization -->
+	values = Country 
+	Legend = Freedom vs. Health
+   
+	* Location wise clustering will be shown.
+	
+ 
+
+# We are done with WHR and Continent dataset so we can hide them 
+ In Data Box --> Hover on the table WHR and Continent  --> Right-click     
+   --> Hide 
+You can see these datasets in the Data View as well as Model View, They will be hidden in the report view only.
+
+
+
+# Highlights 
+1. Scatterplot
+2. Tooltip
+3. conditional formatting
+4. how to Hide datasets
+5. clustering
