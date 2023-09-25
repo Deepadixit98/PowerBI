@@ -1,0 +1,32 @@
+# Data set Used = Sample
+ 
+# First Visual - Stalked Bar Chart
+--> In the visualization
+    Y-axis = Product
+    X-axis = Sum of Profit, Sum of Discounts
+    
+-->In the Brush (Format) 
+    Data labels --> turn on  (Shows numbers on beam )
+    Total labels --> turn on (Shows numbers on axes )
+		 --> Values -->Value decimal places = 1
+    X-axis --> turn off 
+	* as the labels on no need of axis values.
+
+
+# Second Visual - Stalked Column Chart
+--> In the visualization
+    X-axis = Discount Band
+    Y-axis = Sum of  Sales
+    Legend = Year
+
+-->In the Brush (Format) 
+    Data labels --> turn on 
+    Total labels --> turn on
+    Y-axis --> turn off
+	* as the labels on no need of axis values.
+
+When we take the StalkedBar Chart, the visualisation shows that the first field is for the Y-axis and the second is for the X-axis.
+
+In contrast with the Stalked Column Chart, the visualisation shows that the first field is for the X-axis and the second is for the Y-axis.
+
+So basically, PowerBI always suggests the first field for textual data i.e. catagorical data and the Second field for Numerical data. 
