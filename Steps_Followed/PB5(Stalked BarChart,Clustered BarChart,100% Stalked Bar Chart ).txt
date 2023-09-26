@@ -1,0 +1,21 @@
+# Data set Used = Sample
+
+# First Visual - Stalked BarChart
+--> In the visualization
+    Y-axis = Country
+    X-axis = Sum of Sales
+    Legend = Date --> Date hierarchy-->Year
+
+
+# Second Visual - Clustered BarChart ..(copied and pasted first)
+--> In the visualization
+    Y-axis = Country
+    X-axis = Sum of Sales
+    Legend = Date --> Date hierarchy-->Year
+
+
+# Third Visual - 100% Stalked Bar Chart ..(copied and pasted first)
+--> In the visualization
+    Y-axis = Country
+    X-axis = Sum of Sales
+    Legend = Date --> Date hierarchy-->Year
