@@ -1,0 +1,29 @@
+# Data set Used = Sample
+
+# First Visual -Line & Stalked Column Chart
+--> In the visualization
+    X-axis        = Date --> Date hierarchy-->Quarter
+    Column Y-axis = Sum of Profit, Sum of Discounts
+    Line Y-axis   = Sum of Gross Sales
+
+
+# Second Visual -Line & Clustered Column Chart
+--> In the visualization
+    X-axis        = Date --> Date hierarchy-->Quarter
+    Column Y-axis = Sum of Profit
+    Line Y-axis   = Sum of  Sales
+    Column Legend = Year
+
+
+# Third Visual -Ribbon Chart
+
+#Ribbon Chart - Combination of Bar chart, Line chart, Stalked Chart & % Chart altogether.
+
+--> In the visualization
+    X-axis = Date --> Date hierarchy-->Quarter
+    Y-axis = Sum of  Sales
+    Legend = Discount Band
+
+-->In the Brush (Format) 
+    Data labels --> turn on
+
