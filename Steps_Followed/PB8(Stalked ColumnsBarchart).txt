@@ -1,0 +1,53 @@
+# Data set Used = Sample
+
+# Stalked ColumnsBarchart-
+
+# First Visual - Stalked ColumnsBarchart
+--> In the visualization
+    X-axis = Product
+    Y-axis = Sum of Sales
+    Legend = Year
+    Small multiples = Discount Band
+	** Small multiples - When we put any value into the Smallmultiples, 	it bifurcates(divides) the whole visual into small pieces according 	to High, Medium, Low, and None or in any other way.
+
+	** The one big visual is broken down into 4 small pieces.
+
+	** For Discount Band it is High, Medium, Low, and None.
+
+    
+-->In the Brush (Format) 
+    Data labels --> turn on
+    Y- axis --> Shared y-axis = off
+            --> Scale to fit = on
+           
+   To divide frame,  
+
+    Small multiples --> Layout -->Rows = 2
+				  Columns = 1
+
+   ** To see the sother 2 rows you can scroll down.	
+
+
+# Stalked Barchart
+
+# Second Visual - (Copied and pasted the first & choose Stalked Barchart ) 
+
+--> In the visualization
+    Y-axis = Country
+    
+
+*The below parameters will remain as it is since we Copy and pasted the first visual --
+ 
+    X-axis = Product
+    Legend = Year
+    Small multiples = Discount Band
+
+    
+-->In the Brush (Format) 
+    Data labels --> turn on
+    Y- axis --> Shared y-axis = off
+            --> Scale to fit = on
+    Small multiples --> Layout -->Rows = 2
+				  Columns = 1
+
+
