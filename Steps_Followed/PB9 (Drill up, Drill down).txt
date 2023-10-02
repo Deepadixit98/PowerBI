@@ -1,0 +1,68 @@
+# Data set Used = Sample
+
+# Drill Up, Drill Down, Double arrow, and Branch arrow buttons
+
+# First Visual - Clustered BarChart 
+
+--> In the visualization
+    X-axis =  Date... (with complete Date hierarchy)
+    Y-axis = Sum of profit
+    Legend = Year
+
+# 'Drill up' and 'Drill down' get activated when we choose more than 1 value in the legends or values. 
+
+--> In the upper right 
+	-- Drill up, Drill down, double arrow, and branch 
+	arrow buttons are present.
+
+--> Drill up the visual until it shows the yearly report.
+      	* It is a storyline visual - that responds to the actions.
+
+--> Drill down	
+	* If you click on the year 2014 beam after clicking on "Drill down" 
+	  it further shows the Quarterly report if you again "Drill down" 	  
+	  the quarterly it will show the Monthly report.
+
+	* That means "Drill down" goes down in the hierarchy.
+ 
+
+
+# Also, the second visual hights the report when we click any particular bem  in the first one 
+
+
+# Second Visual - PieChart
+
+--> In the visualization
+     Legend = Product, Country, Discount Band, Segment ..(! maintain the sequence)
+     Values = Sum of profit
+
+##TRY --->>
+--> Drill down	
+	* If you click on the product 4.8M after clicking on "Drill down" 
+	  it further shows the Country report for that particular product i.e. 4.8M 
+	  --> If you again "Drill down" on the Country, it will show the Discount Band report for that particular product. 
+          --> If you again "Drill down" on Dicount Band, it will show you in which segment the Dicount Band is.
+
+    	* So, this is your one storyline. You can Drill up to reverse and start another storyline accordingly. 
+
+
+*** Click is active when the "Drill down Button/arrow" is active. Otherwise, it is just regular slicing.
+
+
+# Third Visual - Donut Chart ..(copied and pasted PieChart and changed to Donut Chart)
+
+--> In the visualization
+     Legend = Product, Country, Discount Band, Segment ..(! maintain the sequence)
+     Values = Sum of profit
+
+-->In the Brush (Format) --> Size and Style
+    			 --> Bachgroud -->turn off  
+	***For better visibility of a card visual.
+
+# Fourth Visual - Card 
+     Fields = Sum of profit
+
+
+
+
+
