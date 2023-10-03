@@ -1,0 +1,96 @@
+# Data set Used = Sample
+
+# Slicers - 
+	* It does not just highlight, it gives you actual result form the 	  report.
+
+# First Visual - Line Chart 
+
+--> In the visualization
+     X-axis = Date --> Date hierarchy-->Month
+     Y-axis = Sum of profit
+
+-->In the Brush (Format) 
+    Data labels --> turn on
+
+
+
+# Second Visual - Slicer
+
+# Slicer1 -Date --> Date hierarchy-->Year
+
+--> In the visualization
+     Fields = Date --> Date hierarchy-->Year
+
+
+-->In the Brush (Format) 
+     Background --> chose color
+     Slicer settings --> options -->vertical list
+			
+			 options =1. vertical list 
+				  2. Tile 
+				  3. Dropdown
+				  4. Between
+				  5. less than or equal to 
+				  6. greater than or equal to 
+
+# Slicer2 -Country
+--> In the visualization
+     Fields = Country
+
+
+-->In the Brush (Format) 
+     Slicer settings --> options -->Tile
+     Slicer settings --> Selection --> Show "Select all"
+     Background --> chose color
+				  
+
+
+# Slicer3 - Segment
+--> In the visualization
+     Fields = Segment 
+
+
+-->In the Brush (Format) 
+     Slicer settings --> options -->Dropdown
+     Slicer settings --> Selection --> Single select
+     Background --> chose color
+     Size and style --> Visual border --> turn on
+     Values --> font = Segoe UI bold 
+		size = 14	
+	
+--> In the more options 3 dots near visual  
+	--> select search
+	** Now you can actually search anything in your slicer.
+	   Her, You can search any segment you want e.g. Government.
+
+
+
+# Slicer4 - Discount
+
+# Discount percentage calculation -- 
+Data view -->Sample data  
+
+--> Click on any of the column names --> New Column
+	* New Column (The new column will be created)     
+
+--> Go to Formula bar --> Write >> Disc % = 'Sample'[Discounts] / 'Sample'[Gross Sales]   --> press enter 
+
+--> In the column tools click on the % symbol 
+	* to see discounts in a percentage format.
+ 
+** A new column named Disc % will be created in the table.  
+
+
+# Come back to the report view  
+
+Chose slicer visual -->
+--> In the visualization
+     Fields = Disc %
+
+-->In the Brush (Format) 
+Slicer settings --> options --> Between
+
+** You can easily slide and see the dicount in various range 
+
+
+# end
