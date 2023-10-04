@@ -1,0 +1,80 @@
+# Data set Used = Sample
+
+# BookMarks and Selection 
+	* Bookmark simply clicks the screenshot of the canvas.
+	* Selection helps you in hiding and unhiding visuals.
+
+View tab --> Click on Bookmark 
+	 --> Click on Selection
+
+
+$ VISUALS
+
+# Visual 1- Clustered BarChart
+--> In the visualization
+    Y-axis = Product
+    X-axis = Sum of  Sales 
+
+
+
+$ BUTTONS -
+ 
+# Button1 - Show All
+Insert tab --> Button -->  Blank
+In Brush( Format)-->Button style -->Text -->turn on  
+		        	    Text = Show All
+			            Font = Segoe UI bold  
+	                            Size = 20
+
+# Button2 - Hide All
+Insert tab --> Button -->  Blank
+In Brush( Format)-->Button style -->Text -->turn on  
+		        	    Text = Hide All
+			            Font = Segoe UI bold  
+	                            Size = 20
+
+
+
+$ WORKING
+# Step-1
+
+## In Selection 
+	-->Rename the Buttons as Show all & Hide all accordingly, and rename the visual as Chart.
+	-->Hide Show all 
+
+## In Bookmarks -->
+	Click on Add -->name it as ShowAll 
+
+
+# Step-2
+
+## In Selection 
+	-->Hide Hide all
+	-->Hide Chart
+
+
+## In Bookmarks -->
+	Click on Add --> Name it as HideAll 
+
+
+# Step-3
+Button1 - Show All
+In Brush( Format)-->Action --> turned on 
+			Type = Bookmark
+			Bookmark =ShowAll  
+
+Button2 - Hide All
+In Brush( Format)-->Action --> turned on 
+			Type = Bookmark
+			Bookmark =HideAll 		
+
+
+$TRY -
+
+-->> Press Ctrl & Click on Show All button --> watch 
+	* The Hide All button and chart will be visible.
+
+-->> Press Ctrl & Click on Hide All button --> watch 
+	* Only the Show All button will be visible.
+
+
