@@ -1,0 +1,87 @@
+# Data set Used = Sample
+
+# BookMark 2 
+
+$ VISUALS - 
+
+# Visual 1 -Stalked Column Chart
+--> In the visualization
+    X-axis = Date --> Date hierarchy-->Year
+    Y-axis = Sum of Sales
+
+# Visual 2-Line Chart
+--> In the visualization
+    X-axis = Date --> Date hierarchy-->Year
+    Y-axis = Sum of Sales
+
+# Visual 3-Pie Chart
+--> In the visualization
+    X-axis = Date --> Date hierarchy-->Year
+    Y-axis = Sum of Sales
+
+
+
+
+$ BUTTONS -
+
+# Button1 - BarChart
+Insert tab --> Button -->  Blank
+In Brush( Format)-->Button style -->Text -->turn on  
+		        	    Text = BarChart
+			            Font = Segoe UI bold  
+	                            Size = 20
+
+# Button1 - LineChart
+Insert tab --> Button -->  Blank
+In Brush( Format)-->Button style -->Text -->turn on  
+		        	    Text = LineChart
+			            Font = Segoe UI bold  
+	                            Size = 20
+
+# Button1 - PieChart
+Insert tab --> Button -->  Blank
+In Brush( Format)-->Button style -->Text -->turn on  
+		        	    Text = PieChart
+			            Font = Segoe UI bold  
+	                            Size = 20
+ 
+
+$ WORKING
+
+# Step-1
+## In Selection 
+	-->Rename the Buttons as BarChart, LineChart & PieChart accordingly, and rename the visual as BAR, LINE & PIE.
+	-->Hide LINE. 
+	-->Hide PIE.
+## In Bookmarks -->
+	Click on Add -->name it as BAR. 
+
+
+# Step-2
+## In Selection 
+	-->Hide BAR. 
+	-->Hide PIE.
+## In Bookmarks -->
+	Click on Add -->name it as LINE. 
+
+
+
+# Step-3
+## In Selection 
+	-->Hide LINE. 
+	-->Hide BAR.
+## In Bookmarks -->
+	Click on Add -->name it as PIE. 
+
+
+$TRY -
+
+-->> Press Ctrl & Click on  BarChart button --> watch 
+	* Only the BarChart button will be visible.
+
+-->> Press Ctrl & Click on  LineChart button --> watch 
+	* Only the LineChart button will be visible.
+
+-->> Press Ctrl & Click on  PieChart button --> watch 
+	* Only the PieChart button will be visible.
+
