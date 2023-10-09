@@ -1,0 +1,39 @@
+# Data set Used = Sample
+
+# ToolTip - 
+
+** Tooltip is created in the TT sheet
+
+
+# First Visual - Funnel Chart
+--> In the visualization
+    Category = Discount Bnad
+    Values = Sum of Profit
+
+
+# Second Visual - PieChart 
+--> In the visualization
+    Legend =Year
+    Values = Sum of Profit
+
+--> In Brush( Format)--> Properties --> Tooltips--> turn on
+					Options --> Type = Report page
+						    Page = TT 
+    
+
+# Third Visual - Ribbon Chart 
+--> In the visualization
+    X-axis = Date --> Date hierarchy-->Quarter
+    Y-axis = Sum of Profit
+    Legend = Date --> Date hierarchy-->Year
+    
+--> In Brush( Format)--> Properties --> Tooltips--> turn on
+					Options --> Type = Report page
+						    Page = TT 
+
+$ Result 
+
+** You can see when we hover over the Ribbon Chart or PieChart, we can see the monthly sales window/pop-up visual in that particular place of Ribbon Chart or PieChart.
+   That is the tool tip we created in the TT the sheet. 
+
+ 
