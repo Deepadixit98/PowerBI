@@ -1,0 +1,40 @@
+# Data set Used = Sample
+
+# Actual ToolTip - TT
+
+$ MAKING OF TOOLTIP
+
+On canvas 
+ 
+--> In Brush( Format)
+       
+	--> Page information-->Name = TT
+			       Page Type = Tooltip
+					Options --> Type = Report page
+						    Page = TT 
+
+        -->Data labels --> turn on
+
+--> In the visualization
+    X-axis = Date --> Date hierarchy-->Month
+    Y-axis = Sum of Sales
+    
+
+
+
+$ WORKING OF TOOLTIP
+
+--> Go to sheet 13.ToolTip 
+--> Into the Ribbon chart
+	--> In Brush( Format)--> Properties --> Tooltips--> turn on
+					Options --> Type = Report page
+						    Page = TT 
+
+--> Into the Piechart
+	--> In Brush( Format)--> Properties --> Tooltips--> turn on
+					Options --> Type = Report page
+						    Page = TT 
+
+$ Result 
+
+** You can see when we hover over the Ribbon Chart or PieChart, we can see the monthly sales window/pop-up visual in that particular place of Ribbon Chart or PieChart.
