@@ -1,0 +1,177 @@
+--> Upload Team performance dataset 
+
+--> Click on the Transform data Button
+	* It will take you to the Power query editor.
+
+--> Select the column Shortlisted team 
+--> Click on the Transform --> Split Column --> By delimiter
+		* Split column by delimiter window pops up 
+		   --> Select or enter delimiter  = Comma
+		       Split at = Each occurrence
+ 		   -->OK
+		* The names got placed one beside the other, but we want them 1 below the other. so, into the Split column by delimiter window pops up
+		--> Advanced options --> Split into --> Column 
+
+# Again -->
+
+--> Select the column Shortlisted team 
+--> Click on the Transform --> Split Column --> By delimiter
+		* Split column by delimiter window pops up 
+		   --> Select or enter delimiter --> --Custome--  = (
+		       Split at = Each occurrence
+ 		   -->OK
+
+--> Rename column3 = Emp & column4 = Skill
+
+** You can see in the rightmost pane that PROPERTIES & APPLIED STEPS are available.
+   You can delete the steps to undo the work into the APPLIED STEPS and there is a small symbol of gear, where you can even edit your query. 
+   Also, in the PROPERTIES --> Rename the dataset Team Performance CSV as DataSet
+
+
+$ CLEANING OF THE DATASET- 
+
+# For audit check in the columns --> You can hover the mouse or you can go to the View tab --> Activate the "column quality"
+	* you can see column quality is been shown over the first row for each separated column. 
+
+**In the skill column, we must -- 1. Remove all brackets closed
+				  2. Rename null as Support
+                                  3. Remove blank places before or after the word.
+
+1. Remove all brackets closed
+--> Select the column Skill 
+--> Click on the Transform --> Replace values
+	*  Replace values window pops up 
+		--> Value To Find =  )
+		    Replace With = Blank
+-->OK
+
+
+2. Rename null as Support
+--> Select the column Skill 
+--> Click on the Transform --> Replace values
+	*  Replace values window pops up 
+		--> Value To Find = null
+		    Replace With = Support
+-->OK
+
+**Remember =  Power Query is case-sensitive. 
+
+ 3. Remove blank places before or after the word.
+--> Select the columns Emp & skill
+--> Click on the Transform ---> Format --> Trim 
+	
+# To select Two or more columns	-
+--> To select Two or more columns at a time select any column and then press shift and select the next column.
+
+**So, from flat data and using some of the steps in Power Query, we can get the full-fledged cleaned data.
+
+
+
+$ EMPLOYEE LEVEL REVENUE - 
+
+# Merge Query - It will be one beside the other in multiple columns
+# Append Query - Adding/combining the data one below the other 
+
+
+# In the PROPERTIES pane -->
+--> Rename the dataset "DataSet" as "Project Detail"
+
+
+# In the leftmost pane right-click on the Project Detail --> Reference
+	* creates a copy of the Project Detail -->
+	 -->Rename the copy of the Project Detail as Project Info
+--> Select column Project Name -> Transform -->GroupBy
+	* In the GroupBy Window pop-up -->
+                   Advanced--> first box = Project Name
+                   New column name = No of Emp
+		       Operation = Count Rows ..( choose from Drop-down)
+	               Column = blank
+	           --> Click on Add aggregation
+			New column name = Project Revenue
+		        Operation = Average ..( choose from Drop-down)
+	                Column = Total Project Revenue ..( choose from Drop-down)
+		   --> OK
+
+--> Click Project Revenue & Hold Ctrl key and click No of Emp
+
+** Whatever you select first is the numerator and Whatever you select
+   second is the denominator.   
+
+
+--> Click on Add column Tab --> Standard --> Divide
+	* Diveds Project Revenue by No of Emp gives Revenue per employee
+         in the new column.
+--> Rename the new column as Contribution 
+--> Click Close and apply in the Home Tab
+
+
+$ VISUALS
+
+# # First Visual -  Stalked bar chart--
+--. Click on Contribution in the data box
+		 --> Column tools 
+		    --> Summarization = sum
+--> In the visualization
+    Y-axis = Emp...(From Project Detail)
+    X-axis = Sum of Contribution...(From Project Info)
+    Tooltips = First Project name -->Right click-->count(distinct)
+	* On hovering on the visual it will show the no of projects that the employee worked for.
+        * Distinct gives the unique values only. 
+** To get the name of the skill --> Tooltips = Skill-->Right click-->First 
+
+--> In the Brush(Format)
+    Data labels --> turned on
+    X-axis --> Display units = Thousands
+    
+
+**The Stalked bar chart shows the same output for every employee. But, it is the wrong communication since it is one-way communication.
+
+##
+**See model view --
+Project details should be the controller and project info be the controlee. but it is the opposite. 
+So, as a solution, we can make it two two-way communication.
+
+--> Double click on the relation line --> Edit Relationship Window will pop up
+ --> Keep everything as it is --> Only change cross-filter direction as Both
+
+	* The arrow of the relationship changed both ways.
+
+##
+**Now See Report view --
+   Now, The Stalked bar chart shows the correct output for every employee.
+
+
+# Second Visual - Donut Chart 
+--> In the visualization
+    Legends = Skill...(From Project Detail)
+    Values = Sum of Contribution...(From Project Info)
+
+--> In the Brush(Format)
+    Legends --> turned off
+    Detail labels -->turned on
+    Labels contents = All detail labels 
+
+
+
+# Thid Visual - Card 
+--> In the visualization
+    Fields = Sum of Contribution...(From Project Info)    
+
+--> In the Brush(Format)
+     Callout value --> Display units = None
+
+# Fourth Visual - Funnel Chart
+  Category  = Sector ...(From Project Detail)
+  Values =Sum of Contribution...(From Project Info)
+
+
+# Fifth Visual - Treemap
+--> In the visualization
+  Category  = Project name ...(From Project Detail)
+  Values =Sum of Contribution...(From Project Info)
+  Tooltips = First Skill-->Right click-->count(distinct)
+	* On hovering on the visual it will show the Skill of that every employee.
+        * Distinct gives the unique values only. 
+
+--> In the Brush(Format)
+    Data labels --> turned on
