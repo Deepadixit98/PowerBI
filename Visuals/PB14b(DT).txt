@@ -1,0 +1,43 @@
+# First Visual - Table
+--> In the visualisation
+    Columns = Date, Country, Product, Sum of Sales, Sum of Profit, 
+              Sum of Discount, Sum of Units Sold.   	
+    
+
+# Second Visual - Matrix
+--> In the visualisation
+    Rows = Date --> Date hierarchy-->Month
+    Columns = Date --> Date hierarchy-->Year
+    Values = First Product
+
+
+# Third Visual - Card
+--> In the visualisation
+    X-axis = Profit 	
+    Y-axis = Discounts
+
+# Fourth Visual - Card
+--> In the visualisation
+    Fields = Sales  
+
+# Fifth Visual - Card
+--> In the visualisation
+    Fields = Sum of Profit
+
+# Sixth Visual - Card
+--> In the visualisation
+    Fields = Sum of Discount 
+
+# Seventh Visual - Card
+--> In the visualisation
+    Fields = Sum of Units Sold
+
+
+
+$$$$  In BRUSH/ FORMAT -->
+Page information -->Name = DT
+                    Page type = Drillthrogh
+                    Drillthrough from = Country 
+
+
+

@@ -1,0 +1,94 @@
+# Data set Used = Sample
+
+# Drill Through - 
+
+# First Visual - Stalked ColumnsBarchart
+--> In the visualisation
+    X-axis = Date --> Date hierarchy-->Year
+	     Date --> Date hierarchy-->Month	
+    Y-axis = Sum of Profit
+    Legend = Year
+    
+
+# Second Visual - Map 
+--> In the visualisation
+    Location = Country
+    Bubble size = Sum of Sales
+
+
+# Third Visual - Donut Chart
+--> In the visualisation
+    Legend = Discount Band
+    Values = Sum of Sales
+
+
+# Fourth Visual - Card
+--> In the visualisation
+    Fields = Sum of Sales 
+
+
+# Fifth Visual - Button - 
+Insert tab --> Button -->  Blank
+In Brush( Format)-->Button style-->Apply settings to --> State = Default 
+				-->Text -->turn on  
+		        	    Text = Click Here for more Details
+			            Font = Segoe UI bold  
+	                            Size = 20
+
+	        -->Button style-->Apply settings to --> State = Disabled
+				-->Text -->turn on  
+		        	    Text = Click on the "Country" in the map to activate 
+			            Font = Segoe UI bold  
+	                            Size = 20
+			       --> Fill -->turn on 
+				    Color = orange
+				    Transparency = 44%
+
+		-->Button style-->Apply settings to --> State = On hover
+			       -->Text -->turn on  
+		        	    Text = Click for more Details
+			            Font = Segoe UI bold  
+	                            Size = 20
+			       --> Fill -->turn on 
+				    Color = orange
+				    Transparency = 35%
+
+		-->Button style-->Apply settings to --> State = On press
+			       -->Text -->turn on  
+		        	    Text = Data loading, please wait!
+			            Font = Segoe UI bold  
+	                            Size = 20
+			       --> Fill -->turn on 
+				    Color = Light-green 
+				    Transparency = 50%
+
+
+$$ Result -
+
+On the Button - 
+ Default  = Click Here for more Details
+ Disabled = Click on the "Country" in the map to
+ On hover = Click for more Details
+ On press = Data loading, please wait!
+
+-->> Press ctrl  & Button --> Drills through to the DT sheet and show the data of the country selected in the map
+
+
+** Here, the Map is a Controlling visual while others are controlled.
+
+
+
+# Edit Interactions - It decides how the other visuals will react when we select any part in the Controlling visual.  
+--> Select Map --> Go to Format Tab (in the ribbon) --> Click Edit Interactions (at the left corner).
+
+
+now click on any country from the map and see changes in other visuals.
+Now, with the help of the edit interactions you get three options on the upper right corner of every visual- like - 
+Filter, Highlight & None.  
+
+you can click on "None" --To make the visual not react to the selection in the Controlling visual.
+
+or click on "Highlight" --To make the visual Highlight the result of the selection in the Controlling visual.  
+
+or click on "Filter" --To make the visual Show the result of the selection in the Controlling visual.  
+
