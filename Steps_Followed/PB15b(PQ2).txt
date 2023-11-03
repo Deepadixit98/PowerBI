@@ -1,0 +1,80 @@
+# POWER QUERY
+
+# Master file - Sales 
+ Combined 5 files into one master file.
+
+--> Click on Get data --> Folder --> Folder window will pop up-->paste path from your device or browse it
+ --> Press combine data button --> load and transform data 
+	*  folder will get uploaded and the Power Query Editor will open with the Power BI file 
+
+In the Table showing-->
+--> Click on the arrow at the side of the first column(i.e. Source_Name)
+	* Only 2020 data is showing 
+  --> Click on Load more
+	* Only 2021,2022,2023,2024 data will be loaded.
+	** Do not press OK, PRESS CANCEL.  
+		** If you press OK it will filter out the data and 			   2021,2022,2023,2024 data will not be loaded. 
+	* As column1 = Source_Name, just showing from which year or file the data belongs, is not very important, so, delete it.
+--> Right Click on Column  = Source_Name  --> Remove.
+
+
+--> Rename Category as sub Category 
+
+# Cleaning -->
+
+1. Sales Dataset - master file 
+--> Select the Model_Color
+--> Click on the Transform --> Replace values
+	*  Replace values window pops up 
+		--> Value To Find = null
+		    Replace With = Other
+
+2. Buz Segment- xlsx file 
+--> In home Tab -->New Source --> Excel Workbook --> Brows Buz Segment from your device --> Select dim_segmant --> OK 
+	* Buz Segment is loaded.
+
+# As column 3 is completely null-
+--> Select Catagories and segmt_Catagory columns --> Right Click --> Remove      other columns 
+
+-->Transform --> Remove rows --> Remove Blank Rows. 
+
+--> Select Catagories columns -->Transform --> Fill --> Down
+	* It will Fill up all blank rows with the value of the previous 	  row.
+
+
+3. Customer Type - CSV File 
+--> In home Tab -->New Source --> Text/CSV --> Brows Customer Type from your device -->  OK 
+	* Customer Type CSV is loaded.
+
+--> Transform --> Use First Row As Headers 
+
+
+2. RM Details- xlsx file 
+--> In home Tab -->New Source --> Excel Workbook --> Brows RM Details from your device --> Select Both Location and RMS--> OK
+	* RM Details is loaded.
+
+--> Transform --> Use First Row As Headers 
+--> Select State columns -->Transform --> Fill --> Down
+
+->> Close and Apply
+
+
+
+## Go to Model View 
+# Make the Connections
+---> Given in the "PB16(PQ2)_RDBMS" PNG file 
+
+
+## One Visual -Map
+In the visualization--> 
+ Location = State, City...(From Location Dataset)
+ Buble size = OrderQty ...(From Sales Dataset)
+
+
+In the Column Tools--> 
+Single Click on State Column --> Column Tools
+--> Data category -->State
+
+Single Click on  City Column --> Column Tools
+--> Data category --> City
+
