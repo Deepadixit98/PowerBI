@@ -1,0 +1,67 @@
+$ MEASURES
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >>  M_Gross1= SUM(Sales[C_Gross Sales]) --> press enter
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >> M_#Qty = SUM(Sales[C_OrderQty Sales])--> press enter
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab. 
+--> Go to Formula bar --> Write >> M_#Customer= DISTINCTCOUNT(Sales[Customer])--> press enter
+	* Gives sales per distinct customer.
+
+
+
+$ VISUALS -
+# First Visusal - Table 
+ In the Build Visuals Box -->
+  columns = Cust Type, M_ Gross,M_Premium_Sales,M_Mobile
+
+# Second Visual - Matrix 
+ In the Build Visuals Box -->
+  Rows = C_Buz Seg 
+  Values = M_ Gross, M_Premium_Sales, M_Mobile
+
+* Table gives data vertically, while Matrix gives data in Tabular Format. 
+let's see, how?
+
+* If we put Date --> Date hierarchy-->Year in the Columns of Table and Matrix.
+ *The table shows the report one below the other but the matrix shows one beside the other.
+
+# Measures - 
+
+*Measure gets calculated at a higher level of data, it does not get calculated on a Physical level. 
+*Not doing a calculation at the line item level. keeping it in the memory. Only visible at the report level.
+
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >> M_Premium_Sales = CALCULATE([M_Gross1] , Sales[C_Cust Type] = "Premium")--> press enter
+	* New measure M_Premium_Sales  got created.
+
+* let's add M_Premium_Sales to the table to get the total sales for the premium customer.
+
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >> M_Mobile = CALCULATE([M_Gross], Sales[C_Buz Seg] ="Mobile")--> press enter
+	* New measure M_Mobile got created.
+
+* let's add M_Mobile to the table to get the total sales for the Mobile Buz.
+
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >> M_all vs_Premium_% = DIVIDE([M_Gross], [M_Premium_Sales]) -1  --> press enter
+	* New measure M_Mobile got created.
+
+* let's add  M_all vs_Premium_%  to the table to get Premium_%  per Gross sale.
+
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >> M_all vs_Mobile_% = DIVIDE([M_Gross], [M_Premium_Sales]) -1  --> press enter
+	* New measure M_Mobile got created.
+
+* let's add  M_all vs_Mobile_%  to the table to get Premium_%  per Gross sale.
+
+
+M_Premium&Mobile_Sales = CALCULATE([M_Gross] , Sales[C_Cust Type] = "Premium" && Sales[C_Buz Seg] ="Mobile" )
+
+M_Walkin_Sales = CALCULATE([M_Gross] , Sales[C_Cust Type] = "Regular" || Sales[C_Cust Type] = "Standard"  )
+
