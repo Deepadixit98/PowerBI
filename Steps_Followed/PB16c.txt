@@ -1,0 +1,71 @@
+ Data view --> Table tools--> New table
+
+Time intelligence -
+ 
+Date Table = CALENDARAUTO(12)
+12 = 
+
+Format = dd-mmm-yyyy
+
+
+DateTable = 
+    Var Start_yr  = YEAR (MIN(sales [Date of sales]))
+    Var End_yr = YEAR(MAX(sales [Date of sales]))
+return
+    CALENDAR(DATE(Start_yr,1,1), DATE(End_yr,1,1))
+
+## Year column  -
+Right-click on the Date column --> New column --> 
+   In the formula bar -->>Year = YEAR('Date Table'[Date])--> Enter
+
+
+## Month No column-
+Right-click on the any column --> New column --> 
+   In the formula bar -->>Month No = MONTH('Date Table'[Date])--> Enter  
+
+
+## Month Name column -
+Right-click on the any column --> New column --> 
+   In the formula bar -->>Month Name = FORMAT('Date Table'[Date],"mmm")  --> Enter  
+
+
+## Qtrs column  -
+Qtrs column is showing in which Quater the month belongs.
+Qtrs = 
+    var x = DIVIDE('Date Table'[Month No],3)
+return
+    "Qtr" & ROUNDUP(x, 0 )
+
+
+## F_year (= Financial year) column -
+
+F_Year = 
+    var yr = DateTable[Year]
+    var mo = DateTable[Month No]
+return    
+    IF(mo<=3,yr-1 &"-"& yr , yr &"-"&yr+1)
+
+Column Tools --> Sort by columns --> Month No
+
+
+
+
+SPLM  = same period last month 
+
+M_SPLM = CALCULATE([M_Gross], DATEADD(DateTable[Date], -1, MONTH))
+
+M_SPLM_%Change = DIVIDE([M_Gross]-[M_SPLM], [M_Gross])
+
+
+SPLY  = same period last YEAR
+M_SLPY = CALCULATE([M_Gross] , DATEADD(DateTable[Date], -1, YEAR))
+
+
+M_ DOD = SWITCH(SUM(ChartControl[Flag]),1,[M_Gross],2,[M_Qty],3, [M_#Customer])
+
+
+
+
+$$ VISUALS --
+
+ 
