@@ -1,0 +1,32 @@
+## Go to Model View 
+# Make the Connections
+---> Given in the "PB16(PQ2)_RDBMS" PNG file 
+
+
+# First Visual -Map
+In the visualization--> 
+ Location = State (From Location Dataset), City (From Sales Dataset)
+ Buble size = OrderQty ...(From Sales Dataset)
+
+
+In the Column Tools--> 
+Single Click on State Column --> Column Tools
+--> Data category -->State
+
+Single Click on  City Column --> Column Tools
+--> Data category --> City
+
+--> Use fork button --upper right of visual
+	* To get state-wise bubbles on map 
+
+# Second Visual -Stalked bar chart 
+--> In the visualization
+    Y-axis = RMS (From RMS Dataset)
+    X-axis = OrderQty ...(From Sales Dataset)
+    
+	* Check responsiveness. 
+
+
+# SLicer -
+In the visualization--> Choose the filter
+Fields = State
