@@ -1,0 +1,100 @@
+DAX = Data Analytic Expression 
+DOD = Data on display 
+
+# Data view -->
+
+1. Sale data  
+--> Click on any of the column names --> New Column
+	* New Column (The new column will be created)     
+
+--> Go to Formula bar --> Write >> C_Gross Sales = Sales[ListPrice] * Sales[OrderQty] --> press enter 
+
+--> Go to Formula bar --> Write >> C_Cust Type = RELATED('Customer Type'[Subscription]) --> press enter 
+
+--> Go to Formula bar --> Write >> C_Buz Seg = RELATED(BuzSeg[Categories] ) --> press enter 
+
+--> Go to Formula bar --> Write >> C_RMS = RELATED(RMS[RMS]) --> press enter 
+
+
+2. Location data 
+
+--> Click on any of the column names --> New Column
+	* New Column (The new column will be created)     
+
+--> Go to Formula bar --> Write >> C_No of Invoices = COUNTROWS(RELATEDTABLE(Sales )) --> press enter
+
+
+
+# Report view -->
+ 
+The measure is an aggregative output that is only viewed in the report view.
+
+The measure is not done on the column level but, it is a single output.
+
+The measure cannot pull a column directly unless you use the supportive function.
+
+DOD = Data on display
+
+
+$ VISUALS 
+--> Click on any of the column names --> New Measure
+
+--> Go to Formula bar --> Write >> M_ DOD = SUM(Sales[C_Gross Sales] ) --> press enter 
+
+** Just one field can Dynamically change the output.
+
+* Make the below visuals and then Check different measures over it. 
+
+# First Visual - Stalked BarChart
+--> In the visualisation
+    Y-axis = C_Cust Type
+    X-axis = M_ DOD
+
+
+# Second Visual - Donut Chart 
+--> In the visualisation
+     Legend = Date --> Date Hierarchy --> Year
+     Values = M_ DOD
+
+-->In the Brush (Format) 
+    Size and style --> Background --> Turn off
+
+# Third Visual -Card 
+--> In the visualisation
+     Fields = M_ DOD
+-->In the Brush (Format) 
+    Size and style --> Background --> Turn off
+
+
+# Fourth Visual - Funnel Chart
+  Category  = Model_Color
+  Values =M_ DOD
+
+
+# Fifth Visual - Treemap
+--> In the visualisation
+  Category  = C_Buz Seg
+  Values =M_ DOD
+
+
+** Check Following Measures---
+$ MEASURES
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >>  M_Gross= SUM(Sales[C_Gross Sales]) --> press enter
+
+--> Click on any of the column names --> New Measure or Click on the New measure From the ribbon Home Tab.
+--> Go to Formula bar --> Write >> M_#Qty = Sum (Sales[OrderQty] )s--> press enter
+
+--> Click on any of the column names --> New Measure  or Click on the New measure From the ribbon Home Tab. 
+--> Go to Formula bar --> Write >> M_#Customer= DISTINCTCOUNT(Sales[Customer])--> press enter
+	* Gives sales per distinct customer.
+
+
+# Model view -->
+ 
+** Hide the DataSets after these calculations as all the related data is taken into the Sales DataSet 
+
+--> Go to the Model view --> Hide RMS, Customer type, and BuzSeg Datasets
+	* RMS, Customer type, and BuzSeg Datasets are hidden from Report View 
+
+
