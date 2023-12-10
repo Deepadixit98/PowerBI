@@ -1,0 +1,54 @@
+$$MEASURES - 
+
+1. M_Gross = SUM(Sales[C_Gross Sales] )
+2. M_ DOD = [M_Gross]
+3. M_Qty = SUM(Sales[OrderQty])
+
+4. M_#Customer = DISTINCTCOUNT(Sales[Customer])
+
+5. M_Premium_Sales = CALCULATE([M_Gross] , Sales[C_Cust Type] = "Premium")
+6. M_all vs_Premium_% = DIVIDE([M_Gross],[M_Premium_Sales])-1 
+
+7. M_Mobile Sales = CALCULATE([M_Gross], Sales[C_Buz Seg] ="Mobile")
+8. M_all vs_Mobile_% = DIVIDE([M_Gross], [M_Mobile Sales] )-1
+
+9. M_Premium&Mobile_Sales = CALCULATE([M_Gross], Sales[C_Cust Type] = "Premium",Sales[C_Buz Seg] = "Mobile" )
+
+10. M_Premium && Mobile_Sales = CALCULATE([M_Gross], Sales[C_Cust Type] = "Premium" && Sales[C_Buz Seg] = "Mobile" )
+
+11. M_Premium || Mobile_Sales = CALCULATE([M_Gross], Sales[C_Cust Type] = "Premium" || Sales[C_Buz Seg] = "Mobile" )
+
+12. M_ Walkin_sales =CALCULATE([M_Gross], Sales[C_Cust Type] = "Regular" ||  Sales[C_Buz Seg] = "Standard" )
+
+13. M_Max = 40 * 10^7 
+
+
+$$ VISUALS --
+
+# First visual = Table
+In a build visual -->
+	Columns = DateTable--> Date--> Year, DateTable--> Date--> Month Name and all the measures that are made.  
+In brush / Format -->Size and style --> Grid --> Global font =15
+
+# Second visual = Matrix 
+In a build visual -->
+	Rows = DateTable--> Date--> Year, DateTable--> Date--> Month Name  
+	values = all the measures that are made.
+In brush / Format -->Size and style --> Grid --> Global font =15
+	
+
+# Third visual = Guage 
+In a build visual -->
+	value = M_Gross
+	Target value = M_ Walkin_sales
+
+# Fourth visual = Slicer
+In a build visual -->
+	Field = C_Cust Type
+In brush / Format -->Size and style -->Background -->color = orange
+                 -->Slicer settings -->Options--> Style=Tile
+# Fifth visual = Slicer
+In a build visual -->
+	Field = C_Buz Seg
+In brush / Format -->Size and style -->Background -->color = orange
+	        -->Slicer settings -->Options--> Style=Tile
