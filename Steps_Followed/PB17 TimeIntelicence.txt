@@ -1,0 +1,81 @@
+ Data view --> Table tools--> New table
+
+Time intelligence -
+ 
+Date Table = CALENDARAUTO(12)
+12 = 
+
+Format = dd-mmm-yyyy
+
+$ Table 1 -
+DateTable = 
+    Var Start_yr  = YEAR (MIN(sales [Date of sales]))
+    Var End_yr = YEAR(MAX(sales [Date of sales]))
+return
+    CALENDAR(DATE(Start_yr,1,1), DATE(End_yr,1,1))
+
+### column 1
+## Year column  -
+Right-click on the Date column --> New column --> 
+   In the formula bar -->>Year = YEAR('Date Table'[Date])--> Enter
+
+### column 2
+## Month No column-
+Right-click on the any column --> New column --> 
+   In the formula bar -->>Month No = MONTH('Date Table'[Date])--> Enter  
+
+### column 3
+## Month Name column -
+Right-click on any column --> New column --> 
+   In the formula bar -->>Month Name = FORMAT('Date Table'[Date],"mmm")  --> Enter  
+
+### column 4
+## Qtrs column  -
+Qtrs column shows in which Quater the month belongs.
+Qtrs = 
+    var x = DIVIDE('Date Table'[Month No],3)
+return
+    "Qtr" & ROUNDUP(x, 0 )
+
+
+$ MEASURES
+### Measure 1
+### Measure 2
+## F_year (= Financial year) column -
+
+F_Year = 
+    var yr = DateTable[Year]
+    var mo = DateTable[Month No]
+return    
+    IF(mo<=3,yr-1 &"-"& yr , yr &"-"&yr+1)
+
+Column Tools --> Sort by columns --> Month No
+
+
+### Measure 3  - SPLM  = same period last month 
+
+M_SPLM = CALCULATE([M_Gross], DATEADD(DateTable[Date], -1, MONTH))
+
+### Measure 4
+M_SPLM_%Change = DIVIDE([M_Gross]-[M_SPLM], [M_Gross])
+
+### Measure 5 - SPLY  = same period last YEAR
+M_SLPY = CALCULATE([M_Gross] , DATEADD(DateTable[Date], -1, YEAR))
+
+
+$$ VISUALS --
+
+# First visual = Table
+In a build visual -->
+	Columns = DateTable--> Date--> Year, DateTable--> Date--> Month Name and all the measures that are made.  
+
+# Second visual = Matrix 
+In a build visual -->
+	Rows = DateTable--> Date--> Year, DateTable--> Date--> Month Name  
+	values = all the measures that are made.
+
+In the matrix you get,
+ Drill up = upward arrow
+ Drill Down = downward arrow 
+ Double down arrow = Go to the next level of the hierarchy 
+ Fork Arrow = Expand all down one level of hierarchy. 
